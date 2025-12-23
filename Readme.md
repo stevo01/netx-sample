@@ -2,4 +2,10 @@
 
 ## clone and build the sample application
 
-t.b.d.
+git clone https://github.com/stevo01/netx-sample.git
+git submodule update --init --recursive
+
+## add git submodules
+
+https://github.com/eclipse-threadx/threadx.git
+https://github.com/eclipse-threadx/netxduo.git
