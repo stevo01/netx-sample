@@ -1,0 +1,68 @@
+{
+    "configurations": [
+    {
+        "name": "(gdb) mqtt client",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/build/sample-net-app",
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}",
+        "environment": [],
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "setupCommands": [
+            {
+                "description": "Automatische Strukturierung und Einrückung für gdb aktivieren",
+                "text": "-enable-pretty-printing",
+                "ignoreFailures": true
+            },
+            {
+                "description": "Disassemblierungsvariante auf Intel festlegen",
+                "text": "-gdb-set disassembly-flavor intel",
+                "ignoreFailures": true
+            },
+            {
+                "description": "IGNORE SIGUSR1",
+                "text": "handle SIGUSR1 nostop noprint pass",
+                "ignoreFailures": true
+            },
+            {
+                "description": "IGNORE SIGUSR2",
+                "text": "handle SIGUSR2 nostop noprint pass",
+                "ignoreFailures": true
+            }
+        ]
+    },
+    {
+        "name": "(gdb sudo) mqtt client",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/build/sample-net-app",
+        "MIMode": "gdb",
+        "miDebuggerPath": "/home/stevo/gdbasroot.sh",
+        "cwd": "${workspaceFolder}",
+        "setupCommands": [
+            {
+                "description": "Automatische Strukturierung und Einrückung für gdb aktivieren",
+                "text": "-enable-pretty-printing",
+                "ignoreFailures": true
+            },
+            {
+                "description": "Disassemblierungsvariante auf Intel festlegen",
+                "text": "-gdb-set disassembly-flavor intel",
+                "ignoreFailures": true
+            },
+            {
+                "description": "IGNORE SIGUSR1",
+                "text": "handle SIGUSR1 nostop noprint pass",
+                "ignoreFailures": true
+            },
+            {
+                "description": "IGNORE SIGUSR2",
+                "text": "handle SIGUSR2 nostop noprint pass",
+                "ignoreFailures": true
+            }
+        ]
+    }
+    ]
+}

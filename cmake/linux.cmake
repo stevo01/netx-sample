@@ -14,8 +14,8 @@ set(THREADX_TOOLCHAIN gnu)
 
 set(LINUX_FLAGS "-g -O0 -pthread -m32")
 
-set(CMAKE_C_FLAGS   "${LINUX_FLAGS} -Wall -Werror " CACHE INTERNAL "c compiler flags")
-set(CMAKE_CXX_FLAGS "${LINUX_FLAGS} -Wall -Werror -fno-rtti -fno-exceptions" CACHE INTERNAL "cxx compiler flags")
+set(CMAKE_C_FLAGS   "${LINUX_FLAGS} -Wall -Werror -DNX_HTTP_NO_FILEX" CACHE INTERNAL "c compiler flags")
+set(CMAKE_CXX_FLAGS "${LINUX_FLAGS} -Wall -Werror -DNX_HTTP_NO_FILEX -fno-rtti -fno-exceptions" CACHE INTERNAL "cxx compiler flags")
 set(CMAKE_ASM_FLAGS "${LINUX_FLAGS} -x assembler-with-cpp" CACHE INTERNAL "asm compiler flags")
 set(CMAKE_EXE_LINKER_FLAGS "${LINUX_FLAGS} ${LD_FLAGS} -Wl,--gc-sections" CACHE INTERNAL "exe link flags")
 

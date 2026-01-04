@@ -1,0 +1,33 @@
+{
+    "cmake.generator": "Unix Makefiles",
+    "cmake.buildDirectory": "${workspaceFolder}/build",
+    "cmake.configureSettings": {
+        "CMAKE_TOOLCHAIN_FILE": "${workspaceFolder}/cmake/linux.cmake"
+    },
+    "cmake.buildArgs": [],
+    "cmake.sourceDirectory": "${workspaceFolder}",
+    "cmake.environment": {
+        "CC": "gcc",
+        "CXX": "g++"
+    },
+    "cmake.configureArgs": [
+        "-DCMAKE_TOOLCHAIN_FILE=cmake/linux.cmake",
+        "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
+    ],
+    "cmake.debugConfig": {
+        "miDebuggerArgs": "-x gdb-setup.txt"
+    },
+    // Use clang-format on save
+    "editor.formatOnSave": false,
+    "C_Cpp.clang_format_style": "file",
+    // Use clangd instead of default C++ IntelliSense
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "clangd.arguments": [
+        "--compile-commands-dir=${workspaceFolder}/build"
+        "--clang-tidy",
+        "--clang-tidy-checks=google-*",
+        "--header-insertion=never"
+    ],
+    "C_Cpp.default.compilerPath": "/usr/bin/clang++",
+    "C_Cpp.default.compileCommands": "${workspaceFolder}/build/compile_commands.json"
+}
